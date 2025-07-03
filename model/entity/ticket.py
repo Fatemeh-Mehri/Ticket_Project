@@ -17,14 +17,13 @@ class Ticket:
         return f"Ticket(code={self.code})"
 
 
-
     @property
     def code(self):
         return self._code
 
     @code.setter
     def code(self, value):
-        code_validator(code)
+        ticket_code_validator(value)
         self._code = value
 
 
@@ -98,5 +97,5 @@ class Ticket:
         return self._seat_no
 
     @seat_no.setter
-    def seat_no_validator (self, value):
-        return
+    def seat_no (self, value):
+        self._seat_no = value
