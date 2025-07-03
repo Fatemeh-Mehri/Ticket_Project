@@ -33,7 +33,7 @@ class Ticket:
 
     @origin.setter
     def origin(self, value):
-        origin_validator(value)
+        city_validator(value)
         self._origin = value
 
     @property
@@ -42,7 +42,7 @@ class Ticket:
 
     @destination.setter
     def destination(self, value):
-        destination_validator(value)
+        city_validator(value)
         self._destination = value
 
 
@@ -66,7 +66,7 @@ class Ticket:
 
     @start_date_time.setter
     def start_date_time(self, value):
-       start_date_time_validator(value)
+       date_time_validator(value)
        self._start_date_time = value
 
 
@@ -77,7 +77,7 @@ class Ticket:
 
     @end_date_time.setter
     def end_date_time(self, value):
-        end_date_time_validator(value)
+        date_time_validator(value)
         self._end_date_time = value
 
 
@@ -88,7 +88,6 @@ class Ticket:
 
     @price.setter
     def price(self, value):
-        price_validator(value)
         self._price = value
 
 
