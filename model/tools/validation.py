@@ -64,3 +64,8 @@ def airline_validator(airline):
 
 def sold_validator(sold):
     pass
+
+
+def password_validator(password):
+    if not type(password) == str and re.match(r"^[a-zA-Z0-9]{3,10}$", password):
+        raise ValueError("invalid password")
