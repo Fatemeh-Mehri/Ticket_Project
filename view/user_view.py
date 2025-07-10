@@ -23,6 +23,9 @@ class UserView:
         else:
             msg.showerror("save error", message)
 
+    #def edit
+
+    #def remove
 
     def __init__(self):
         win = Tk()
