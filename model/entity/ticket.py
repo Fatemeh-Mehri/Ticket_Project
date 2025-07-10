@@ -2,7 +2,8 @@ from model.tools.validation import *
 
 
 class Ticket:
-    def __init__(self, code, origin, destination, airline, start_date_time, end_date_time, price, seat_no, sold):
+    def __init__(self, id, code, origin, destination, airline, start_date_time, end_date_time, price, seat_no, sold):
+        self.id = id
         self.code = code
         self.origin = origin
         self.destination = destination
@@ -15,6 +16,14 @@ class Ticket:
 
     def __repr__(self):
         return f"Ticket(code={self.code})"
+
+    @property
+    def id(self):
+        return self._id
+
+    @id.setter
+    def id(self, value):
+        self._id = value
 
     @property
     def code(self):
