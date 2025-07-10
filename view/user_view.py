@@ -3,6 +3,9 @@ import tkinter.messagebox as msg
 from tkinter import *
 import tkinter.ttk as ttk
 
+from view.ticket_view import TicketView
+
+
 class UserView:
     def save_click(self):
         user_controller = UserController()
@@ -55,6 +58,7 @@ class UserView:
 
 
         self.win.mainloop()
+
 
 
 
