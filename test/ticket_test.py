@@ -8,3 +8,4 @@ print(ticket1.id)
 
 
 #todo:mikhastam sold ro az vorodi ha hazf konam vali nemidonestam to marahel badesh bayad chikaresh konm
+#todo:save kar nemikone nmidonm chera
