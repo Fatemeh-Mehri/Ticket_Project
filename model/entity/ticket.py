@@ -31,7 +31,7 @@ class Ticket:
 
     @code.setter
     def code(self, value):
-        ticket_code_validator(value)
+        # ticket_code_validator(value)
         self._code = value
 
     @property
@@ -67,7 +67,7 @@ class Ticket:
 
     @start_date_time.setter
     def start_date_time(self, value):
-        date_time_validator(value)
+        date_time_validator(value, "invalid start date time")
         self._start_date_time = value
 
     @property
@@ -76,7 +76,7 @@ class Ticket:
 
     @end_date_time.setter
     def end_date_time(self, value):
-        date_time_validator(value)
+        date_time_validator(value, "invalid end date time")
         self._end_date_time = value
 
     @property

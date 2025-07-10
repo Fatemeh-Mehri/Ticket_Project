@@ -21,6 +21,18 @@ class TicketView:
             self.sold.get()
         )
         if status:
+            self.table.insert("", END, values=(
+                self.id.get(),
+                self.code.get(),
+                self.origin.get(),
+                self.destination.get(),
+                self.airline.get(),
+                self.start_date_time.get(),
+                self.end_date_time.get(),
+                self.price.get(),
+                self.seat_no.get(),
+                self.sold.get()
+            ))
             msg.showinfo("Save", message)
         else:
             msg.showerror("Save Error", message)
@@ -71,35 +83,31 @@ class TicketView:
         Label(self.win, text="Sold").place(x=35,y=380)
         ttk.Checkbutton(self.win, variable=self.sold,onvalue=True, offvalue=False).place(x=100,y=380)
 
-        table = ttk.Treeview(self.win, columns=[1, 2, 3, 4, 5, 6, 7, 8, 9], show='headings')
-        table.place(x=270, y=20)
+        self.table = ttk.Treeview(self.win, columns=[1, 2, 3, 4, 5, 6, 7, 8, 9], show='headings')
+        self.table.place(x=270, y=20)
 
-        table.heading(1, text='id')
-        table.heading(2, text='ticket code')
-        table.heading(3, text='source')
-        table.heading(4, text='destination')
-        table.heading(5, text='start date time')
-        table.heading(6, text='end date time')
-        table.heading(7, text='price')
-        table.heading(8, text='seat no')
-        table.heading(9, text='sold')
+        self.table.heading(1, text='id')
+        self.table.heading(2, text='ticket code')
+        self.table.heading(3, text='source')
+        self.table.heading(4, text='destination')
+        self.table.heading(5, text='start date time')
+        self.table.heading(6, text='end date time')
+        self.table.heading(7, text='price')
+        self.table.heading(8, text='seat no')
+        self.table.heading(9, text='sold')
 
-        table.column(1, width=70)
-        table.column(2, width=100)
-        table.column(3, width=130)
-        table.column(4, width=130)
-        table.column(5, width=130)
-        table.column(6, width=130)
-        table.column(7, width=110)
-        table.column(8, width=110)
-        table.column(9, width=110)
+        self.table.column(1, width=70)
+        self.table.column(2, width=100)
+        self.table.column(3, width=130)
+        self.table.column(4, width=130)
+        self.table.column(5, width=130)
+        self.table.column(6, width=130)
+        self.table.column(7, width=110)
+        self.table.column(8, width=110)
+        self.table.column(9, width=110)
 
         Button(self.win, text="Save", command=self.save_click).place(x=70,y=500,width=80)
 
 
 
         self.win.mainloop()
-
-
-if __name__ == "__main__":
-    TicketView()

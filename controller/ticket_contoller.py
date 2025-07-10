@@ -11,6 +11,7 @@ class TicketController:
             return True, f"ticket info saved successfully {ticket}"
 
         except Exception as e:
+            e.with_traceback()
             return False, f"error saving ticket info {e}"
 
     def edit(self,id, code, origin, destination, airline, start_date_time, end_date_time, price, seat_no, sold):
