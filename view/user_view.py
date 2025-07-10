@@ -57,6 +57,28 @@ class UserView:
         Entry(win, textvariable=self.password).place(x=40, y=180)
 
 
+
+        table = ttk.Treeview(self.win, columns=[1, 2, 3, 4, 5, 6, 7, 8, 9], show='headings')
+        table.place(x=270, y=20)
+
+        table.heading(1, text='id')
+        table.heading(2, text='name')
+        table.heading(3, text='family')
+        table.heading(4, text='birth date')
+        table.heading(5, text='user name')
+
+        self.table.column(1, width=100)
+        self.table.column(2, width=130)
+        self.table.column(3, width=130)
+        self.table.column(4, width=130)
+        self.table.column(5, width=130)
+
+        Button(self.win, text="Save", command=self.save_click).place(x=70, y=500)
+#        Button(self.win, text="Save", command=self.edit).place()
+#        Button(self.win, text="Save", command=self.remove).place()
+
+
+
         self.win.mainloop()
 
 
