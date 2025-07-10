@@ -2,7 +2,7 @@ from tkinter import *
 import tkinter.messagebox as msg
 import tkinter.ttk as ttk
 from controller.ticket_contoller import TicketController
-from model.tools.validation import city_list
+from model.tools.validation import city_list, airline_list
 
 
 class TicketView:
@@ -34,7 +34,7 @@ class TicketView:
         self.code = IntVar()
         self.origin = StringVar()
         self.destination = StringVar()
-        self.airline = IntVar()
+        self.airline = StringVar()
         self.start_date_time = StringVar()
         self.end_date_time = StringVar()
         self.price = IntVar()
@@ -44,17 +44,17 @@ class TicketView:
         Label(self.win, text='id').place(x=50,y=20)
         Entry(self.win, textvariable=self.id).place(x=100,y=20)
 
-        Label(self.win, text="Code").place(x=25,y=60)
+        Label(self.win, text="Code").place(x=40,y=60)
         Entry(self.win, textvariable=self.code).place(x=100,y=60)
 
-        Label(self.win, text="Origin").place(x=40,y=100)
-        Entry(self.win, textvariable=self.origin).place(x=100,y=100)
+        Label(self.win, text="Origin").place(x=35,y=100)
+        ttk.Combobox(self.win, textvariable=self.origin, values=city_list).place(x=100,y=100)
 
         Label(self.win, text="Destination").place(x=20,y=140)
-        Entry(self.win, textvariable=self.destination).place(x=100,y=14)
+        ttk.Combobox(self.win, textvariable=self.destination, values=city_list).place(x=100,y=140)
 
         Label(self.win, text="Airline").place(x=35,y=180)
-        ttk.Combobox(self.win, textvariable=self.airline, values=city_list).place(x=100,y=180)
+        ttk.Combobox(self.win, textvariable=self.airline, values=airline_list).place(x=100,y=180)
 
         Label(self.win, text="Start Date Time").place(x=13,y=220)
         Entry(self.win, textvariable=self.start_date_time).place(x=100,y=220)
@@ -69,7 +69,7 @@ class TicketView:
         Entry(self.win, textvariable=self.seat_no).place(x=100,y=340)
 
         Label(self.win, text="Sold").place(x=35,y=380)
-        Label(self.win, textvariable=self.sold).place(x=100,y=380)
+        ttk.Checkbutton(self.win, variable=self.sold,onvalue=True, offvalue=False).place(x=100,y=380)
 
         table = ttk.Treeview(self.win, columns=[1, 2, 3, 4, 5, 6, 7, 8, 9], show='headings')
         table.place(x=270, y=20)
@@ -97,5 +97,9 @@ class TicketView:
         Button(self.win, text="Save", command=self.save_click).place(x=70,y=500,width=80)
 
 
-#todo:ejra nemishe
+
         self.win.mainloop()
+
+
+if __name__ == "__main__":
+    TicketView()
