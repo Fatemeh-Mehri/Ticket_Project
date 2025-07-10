@@ -54,9 +54,17 @@ class UserView:
         Entry(win, textvariable=self.password).place(x=40, y=180)
 
 
+        self.win.mainloop()
 
 
 
 
 
-        win.mainloop()
+if __name__ == "__main__":
+    TicketView()
+
+
+
+
+
+
