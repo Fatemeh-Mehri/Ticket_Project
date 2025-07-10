@@ -96,4 +96,6 @@ class TicketView:
 
         Button(self.win, text="Save", command=self.save_click).place(x=70,y=500,width=80)
 
+
+#todo:ejra nemishe
         self.win.mainloop()
